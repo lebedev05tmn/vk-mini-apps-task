@@ -1,38 +1,26 @@
-import {
-  RouteWithRoot,
-  createHashRouter,
-} from "@vkontakte/vk-mini-apps-router";
-
-// Массив объектов, указывающих маршруты
-const routes: RouteWithRoot[] = [
-  {
-    path: "/", // Путь
-    panel: "home_panel", // Желаемый Panel
-    view: "default_view", // Желаемый View
-    root: "default_root", // Желаемый Root
-  },
-  {
-    path: `/user`,
-    modal: "user_modal", // Модальное окно
-    panel: "home_panel",
-    view: "default_view",
-    root: "default_root",
-  },
-  {
-    path: `/persik/:emotion`,
-    tab: "emotion_tab", // Tab
-    panel: "persik_panel",
-    view: "default_view",
-    root: "default_root",
-  },
-  // Другие маршруты...
-];
-
-const router = createHashRouter(routes);
+import { View, Panel } from "@vkontakte/vkui";
+import { useActiveVkuiLocation } from "@vkontakte/vk-mini-apps-router";
+import { RoutePanelNav, ROUTE_VIEW_NAV } from "shared/config";
+import Main from "./Main";
+import NotFound from "./NotFound";
+import Details from "./Details";
 
 const Routing = () => {
-  console.log(router);
-  return <div>Hello world!!!</div>;
+  const { panel: activePanel } = useActiveVkuiLocation();
+
+  return (
+    <View nav={ROUTE_VIEW_NAV} activePanel={activePanel || RoutePanelNav.MAIN}>
+      <Panel nav={RoutePanelNav.MAIN}>
+        <Main />
+      </Panel>
+      <Panel nav={RoutePanelNav.DETAILS}>
+        <Details />
+      </Panel>
+      <Panel nav={RoutePanelNav.NOT_FOUND}>
+        <NotFound />
+      </Panel>
+    </View>
+  );
 };
 
 export default Routing;
