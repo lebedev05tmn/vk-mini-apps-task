@@ -13,7 +13,7 @@ const Header: FC<PropsWithChildren<IHeader>> = ({
 }) => {
   return (
     <PanelHeader before={!isMain && <PanelHeaderBack onClick={onBackClick} />}>
-      {isMain && children}
+      {isMain ? children : "Назад"}
     </PanelHeader>
   );
 };

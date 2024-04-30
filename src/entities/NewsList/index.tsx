@@ -1,2 +1,3 @@
 export { NewsList } from "./ui";
-export * from "./model";
+export { fetchNewstories, fetchNewsList, newsListReducer } from "./model";
+export { parseDate } from "./lib";

@@ -19,4 +19,30 @@ export interface INewsCard {
   score: number;
   by: string;
   time: string;
+  index: number;
+  onClick: () => void;
+}
+
+export interface INewsListAction {
+  type: string;
+  payload: IStory[];
+}
+
+export interface INewstoriesList {
+  type: string;
+  payload: number[];
+}
+
+export interface INewsDetails {
+  by: string;
+  time: string;
+  title: string;
+  url: string;
+}
+
+export interface IComment {
+  id: number;
+  text: string;
+  kids?: IComment[];
+  deleted?: boolean;
 }

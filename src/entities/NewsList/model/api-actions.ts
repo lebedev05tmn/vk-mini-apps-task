@@ -1,9 +1,8 @@
 import { api } from "../api";
 import { Dispatch } from "@reduxjs/toolkit";
 import { fillNewsList, fillNewstoriesId } from "./action";
-import { INewsListAction, INewstoriesList } from "./news-list-reducer";
 import { AxiosResponse } from "axios";
-import { IStory } from "shared/interfaces";
+import { IStory, INewsListAction, INewstoriesList } from "shared/interfaces";
 
 export const fetchNewstories =
   () => async (dispatch: Dispatch<INewstoriesList>) => {
@@ -18,8 +17,14 @@ export const fetchNewstories =
     }
   };
 
+type IGetState = () => {
+  NEWS_LIST: {
+    newstoriesList: number[];
+  };
+};
+
 export const fetchNewsList =
-  () => async (dispatch: Dispatch<INewsListAction>, getState: any) => {
+  () => async (dispatch: Dispatch<INewsListAction>, getState: IGetState) => {
     try {
       const newsListPromises: Promise<AxiosResponse<IStory>>[] =
         getState().NEWS_LIST.newstoriesList.map((item: number) =>
@@ -34,6 +39,7 @@ export const fetchNewsList =
         (response: AxiosResponse<IStory>) => response.data
       );
       dispatch(fillNewsList(newsListData));
+      localStorage.setItem("newsList", JSON.stringify(newsListData));
     } catch (error) {
       throw error;
     }

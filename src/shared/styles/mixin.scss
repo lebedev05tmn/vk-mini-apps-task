@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+@mixin calculateWidthBlock($width) {
+  width: $width - $remainWidth;
+}
+
+@mixin adaptiveWidth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include calculateWidthBlock($mobileWidth);
+
+  @media screen and (min-width: $tabletWidth) {
+    @include calculateWidthBlock($tabletWidth);
+  }
+
+  @media screen and (min-width: $laptopWidth) {
+    @include calculateWidthBlock($laptopWidth);
+  }
+
+  @media screen and (min-width: $desktopWidth) {
+    @include calculateWidthBlock($desktopWidth);
+  }
+}

@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { NewsListWithState } from "features/NewsListWithState";
 import { UpdateButton } from "features/UpdateButton";
-import { SplitCol } from "@vkontakte/vkui";
+import { Block } from "shared/ui";
 
 const MainList: FC = () => {
   return (
-    <SplitCol>
+    <Block>
       <UpdateButton />
       <NewsListWithState />
-    </SplitCol>
+    </Block>
   );
 };
 

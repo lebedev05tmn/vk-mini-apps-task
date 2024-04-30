@@ -1,26 +1,24 @@
 import { FC, useEffect } from "react";
-import {
-  NewsList,
-  INewsListAction,
-  INewstoriesList,
-  fetchNewstories,
-  fetchNewsList,
-} from "entities/NewsList";
+import { NewsList, fetchNewstories, fetchNewsList } from "entities/NewsList";
 import { useSelector, useDispatch } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
-import { RootState } from "app/store";
-import { QUERY_INTEVAL } from "shared/config";
-import { Group } from "@vkontakte/vkui";
-import {} from "entities/NewsList/model";
+import { QUERY_INTEVAL, AppRoute } from "shared/config";
+import { INewstoriesList, INewsListAction } from "shared/interfaces";
+import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 
 const NewsListWithState: FC = () => {
+  type IState = {
+    NEWS_LIST: {
+      newstoriesList: number[];
+    };
+  };
   const dispatch: ThunkDispatch<
-    RootState,
+    IState,
     void,
     INewsListAction | INewstoriesList
   > = useDispatch();
-  const newstories: any[] = useSelector(
-    (state: RootState) => state.NEWS_LIST.newstoriesList
+  const newstories: number[] = useSelector(
+    (state: IState) => state.NEWS_LIST.newstoriesList
   );
   useEffect(() => {
     if (newstories.length === 0) dispatch(fetchNewstories());
@@ -36,11 +34,16 @@ const NewsListWithState: FC = () => {
     }, QUERY_INTEVAL);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [dispatch]);
+
+  const routeNavigator = useRouteNavigator();
+
   return (
-    <Group>
-      <NewsList />
-    </Group>
+    <NewsList
+      handleNavigateToDetail={(id: number) =>
+        routeNavigator.push(AppRoute.DETAILS + id)
+      }
+    />
   );
 };
 

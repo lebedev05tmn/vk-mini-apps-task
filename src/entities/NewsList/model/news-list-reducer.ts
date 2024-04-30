@@ -1,32 +1,18 @@
-import { IStory } from "shared/interfaces";
+import { IStory, INewsListAction, INewstoriesList } from "shared/interfaces";
 import { ActionType } from "./action";
 import { NEWS_COUNT } from "shared/config";
 
 interface IState {
   newstoriesList: number[];
-  isLoadedNewstoriesList: boolean;
   newsList: IStory[];
   isLoadedNewsList: boolean;
-  isLoadedNewsItem: boolean;
 }
 
 export const initialState: IState = {
   newstoriesList: [],
-  isLoadedNewstoriesList: false,
-  newsList: [],
+  newsList: JSON.parse(localStorage.getItem("newsList") || "[]"),
   isLoadedNewsList: false,
-  isLoadedNewsItem: false,
 };
-
-export interface INewsListAction {
-  type: string;
-  payload: IStory[];
-}
-
-export interface INewstoriesList {
-  type: string;
-  payload: number[];
-}
 
 const newsListReducer = (
   state = initialState,
@@ -39,7 +25,7 @@ const newsListReducer = (
         newstoriesList: [
           ...new Set([...state.newstoriesList, ...action.payload]),
         ].slice(0, NEWS_COUNT),
-        isLoadedNewstoriesList: true,
+        isLoadedNewsList: false,
       };
     case ActionType.FILL_NEWS_LIST:
       return {

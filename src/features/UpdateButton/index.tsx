@@ -1,11 +1,8 @@
 import { FC } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
-import {
-  INewsListAction,
-  INewstoriesList,
-  fetchNewstories,
-} from "entities/NewsList";
+import { fetchNewstories } from "entities/NewsList";
+import { INewsListAction, INewstoriesList } from "shared/interfaces";
 import { RootState } from "app/store";
 import { Button } from "@vkontakte/vkui";
 
@@ -15,10 +12,24 @@ const UpdateButton: FC = () => {
     void,
     INewsListAction | INewstoriesList
   > = useDispatch();
+
+  const newsList = useSelector((state: RootState) => state.NEWS_LIST.newsList);
+  const isLoaded = useSelector(
+    (state: RootState) => state.NEWS_LIST.isLoadedNewsList
+  );
+
   const handleUpdate = () => {
     dispatch(fetchNewstories());
   };
-  return <Button onClick={handleUpdate}>Обновить</Button>;
+
+  return (
+    newsList.length > 0 &&
+    isLoaded && (
+      <Button onClick={handleUpdate} style={{ width: "95%" }}>
+        Обновить
+      </Button>
+    )
+  );
 };
 
 export { UpdateButton };

@@ -1,8 +1,14 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
-import { newsListReducer } from "entities/NewsList/model/news-list-reducer";
+import { newsListReducer } from "entities/NewsList";
+import { newsReducer } from "entities/News";
+import { commentsReducer } from "entities/Comments";
 
-const rootReducer = combineReducers({ NEWS_LIST: newsListReducer });
+const rootReducer = combineReducers({
+  NEWS_LIST: newsListReducer,
+  NEWS: newsReducer,
+  COMMENTS: commentsReducer,
+});
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -10,4 +16,3 @@ export const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type GetState = typeof store.getState;

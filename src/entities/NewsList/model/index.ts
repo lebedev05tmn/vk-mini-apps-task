@@ -1,2 +1,2 @@
+export { newsListReducer } from "./news-list-reducer";
 export { fetchNewsList, fetchNewstories } from "./api-actions";
-export type { INewsListAction, INewstoriesList } from "./news-list-reducer";
