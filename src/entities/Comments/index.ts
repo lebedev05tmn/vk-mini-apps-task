@@ -1,1 +1,1 @@
-export { commentsReducer } from "./model/comments-reducer";
+export { Comments } from "./ui";

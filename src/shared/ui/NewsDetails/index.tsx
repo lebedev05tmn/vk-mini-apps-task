@@ -7,6 +7,7 @@ const NewsDetails: FC<PropsWithChildren<INewsDetails>> = ({
   url,
   title,
   by,
+  descendants,
 }) => {
   return (
     <Card className={styles.Card}>
@@ -18,6 +19,7 @@ const NewsDetails: FC<PropsWithChildren<INewsDetails>> = ({
           {url}
         </a>
       </Paragraph>
+      <Paragraph>Количество комментариев: {descendants}</Paragraph>
     </Card>
   );
 };

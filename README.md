@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Тестовое задание в команду Развитиx и поддержки мини-приложений экосистемы «Здоровье ВКонтакте»
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте
 
-Currently, two official plugins are available:
+Используемые технологии:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    - React
+    - React-router-dom
+    - VKUI
+    - VK tunnel, VK Mini Apps deploy
+    - TypeScript
+    - Axios
+    - Redux Toolkit, Redux Thunk
+    - SCSS (CSS Modules)
+    - Local Storage
+    - VITE
 
-## Expanding the ESLint configuration
+Реализована архитектура: `Feature-Sliced-Design`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Проект развернут на vercel и доступен по ссылке: [vk.com/app51914500](https://vk.com/app51914500)
 
-- Configure the top-level `parserOptions` property like this:
+Для того, чтобы установить проект к себе на устройство, выполните команду:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```shell
+git clone https://github.com/lebedev05tmn/vk-mini-apps-task.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+В каталоге проекта вы можете запустить приложение, выполнив команду:
+
+```shell
+yarn start
+```
+
+Перед первым запуском приложения установите зависимостиы, выполнив команду:
+
+```shell
+yarn
+```
+
+Откройте [https://localhost:3000](https://localhost:3000), чтобы просмотреть его в браузере.
+
+Страница будет перезагружена, если вы внесете изменения.\
+Вы также увидите все ошибки lint в консоли.
+
+```shell
+yarn lint
+```
+
+Запускает lint тесты.
+
+```shell
+yarn build
+```
+
+Создает приложение для рабочей среды в папке "dist".\
+Это корректно объединяет React в рабочем режиме и оптимизирует сборку для достижения наилучшей производительности.
+
+Сборка сокращена, а имена файлов содержат хэши.

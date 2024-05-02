@@ -2,7 +2,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 import { newsListReducer } from "entities/NewsList";
 import { newsReducer } from "entities/News";
-import { commentsReducer } from "entities/Comments";
+import { commentsReducer } from "entities/Comments/model/comments-reducer";
 
 const rootReducer = combineReducers({
   NEWS_LIST: newsListReducer,

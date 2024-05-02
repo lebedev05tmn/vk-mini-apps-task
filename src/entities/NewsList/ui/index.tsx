@@ -11,7 +11,7 @@ interface INewsList {
 
 const NewsList: FC<PropsWithChildren<INewsList>> = memo(
   ({ handleNavigateToDetail }) => {
-    const data: any[] = useSelector(
+    const data: any = useSelector(
       (state: RootState) => state.NEWS_LIST.newsList
     );
 

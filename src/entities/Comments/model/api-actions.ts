@@ -1,20 +1,20 @@
-import { Dispatch } from "@reduxjs/toolkit";
 import { api } from "../api";
-import { IComment } from "shared/interfaces";
+import { Dispatch } from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
-import { fillComments } from "./action";
+import { IComment } from "shared/interfaces";
+import { fillComments, fillSubComments } from "./action";
 
-export interface IAction {
+export interface IActionComment {
   type: string;
   payload: IComment[];
 }
 
 export const fetchComments =
-  () => async (dispatch: Dispatch<IAction>, getState: any) => {
-    const newsListPromises: Promise<AxiosResponse<IComment>>[] =
-      getState().NEWS.newsItem.kids.map((item: IComment) =>
-        api.get(`item/${item}.json`)
-      );
+  (kids: number[], isSub: boolean) =>
+  async (dispatch: Dispatch<IActionComment>) => {
+    const newsListPromises: Promise<AxiosResponse<IComment>>[] = kids.map(
+      (item: number) => api.get(`item/${item}.json`)
+    );
     const newsListResponses: AxiosResponse<IComment>[] = await Promise.all(
       newsListPromises
     );
@@ -22,6 +22,7 @@ export const fetchComments =
     const newsListData: IComment[] = newsListResponses.map(
       (response: AxiosResponse<IComment>) => response.data
     );
-    dispatch(fillComments(newsListData));
-    localStorage.setItem("newsComments", JSON.stringify(newsListData));
+    isSub
+      ? dispatch(fillSubComments(newsListData))
+      : dispatch(fillComments(newsListData));
   };

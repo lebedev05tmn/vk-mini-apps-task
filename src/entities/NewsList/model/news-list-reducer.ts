@@ -2,7 +2,7 @@ import { IStory, INewsListAction, INewstoriesList } from "shared/interfaces";
 import { ActionType } from "./action";
 import { NEWS_COUNT } from "shared/config";
 
-interface IState {
+export interface IState {
   newstoriesList: number[];
   newsList: IStory[];
   isLoadedNewsList: boolean;

@@ -11,7 +11,7 @@ export interface IAction {
 
 export const fetchNewsItem = (id: string) => (dispatch: Dispatch<IAction>) => {
   api.get(`item/${id}.json`).then((response: AxiosResponse<IStory>) => {
-    localStorage.setItem("newswItem", JSON.stringify(response.data));
+    localStorage.setItem("newsItem", JSON.stringify(response.data));
     dispatch(fillNewsItem(response.data));
   });
 };

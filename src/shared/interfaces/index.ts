@@ -38,11 +38,14 @@ export interface INewsDetails {
   time: string;
   title: string;
   url: string;
+  descendants: number;
 }
 
 export interface IComment {
   id: number;
   text: string;
-  kids?: IComment[];
+  kids?: number[];
   deleted?: boolean;
+  by: string;
+  time: number;
 }
