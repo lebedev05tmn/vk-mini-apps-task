@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsComment render Should NewsComment with children 1`] = `
+<div
+  className="vkuiCard"
+>
+  <div>
+    hello world
+  </div>
+</div>
+`;

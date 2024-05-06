@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block render Should Block with children 1`] = `
+<div
+  className="vkuiSplitCol vkuiSplitCol--viewWidth-none vkuiInternalSplitCol--viewWidth-none"
+  style={
+    {
+      "maxWidth": undefined,
+      "minWidth": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <section
+    className="vkuiInternalGroup vkuiGroup vkuiGroup--sizeX-none vkuiInternalGroup--sizeX-none vkuiGroup--mode-none vkuiInternalGroup--mode-none vkuiGroup--padding-m"
+  >
+    <div>
+      hello world
+    </div>
+  </section>
+  <div
+    className="vkuiSpacing vkuiGroup__separator vkuiGroup__separator--spacing"
+    style={
+      {
+        "height": 16,
+        "padding": "8px 0",
+      }
+    }
+  />
+  <div
+    className="vkuiSeparator vkuiSeparator--padded vkuiGroup__separator vkuiGroup__separator--separator"
+  >
+    <hr
+      className="vkuiSeparator__in"
+    />
+  </div>
+</div>
+`;

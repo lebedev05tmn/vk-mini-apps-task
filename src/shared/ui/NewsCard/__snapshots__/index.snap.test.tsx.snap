@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News Card render Should NewsCard render 1`] = `
+<div
+  className="vkuiCard"
+  onClick={[Function]}
+>
+  <span
+    className="vkuiTypography vkuiTypography--normalize vkuiTitle--level-1"
+  >
+    <span>
+      1
+      .
+    </span>
+    title
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Рейтинг: 
+    15
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Ник автора: 
+    author
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Дата публикации: 
+    12345
+  </span>
+</div>
+`;

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments render Should Comment is Sub 1`] = `
+<div
+  className="vkuiCard undefined undefined"
+>
+  <span
+    className="vkuiTypography vkuiTypography--normalize vkuiTitle--level-1"
+  >
+    1
+     Автор: 
+    author
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Hello world
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    12345
+  </span>
+</div>
+`;
+
+exports[`Comments render Should Comment is not Sub 1`] = `
+<div
+  className="vkuiCard undefined false"
+>
+  <span
+    className="vkuiTypography vkuiTypography--normalize vkuiTitle--level-1"
+  >
+    1
+     Автор: 
+    author
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Hello world
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    12345
+  </span>
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News Details render Should NewsDetails render 1`] = `
+<div
+  className="vkuiCard"
+>
+  <span
+    className="vkuiTypography vkuiTypography--normalize vkuiTitle--level-1"
+  >
+    Новость: 
+    title
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Автор новости: 
+    author
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Ссылка на новость:
+     
+    <a
+      href="#"
+      target="_blank"
+    >
+      #
+    </a>
+  </span>
+  <span
+    className="vkuiTypography vkuiParagraph"
+  >
+    Количество комментариев: 
+    1
+  </span>
+</div>
+`;

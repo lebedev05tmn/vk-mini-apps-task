@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headers render Should Header renders is Main 1`] = `
+<div
+  className="vkuiPanelHeader vkuiInternalPanelHeader vkuiPanelHeader--android vkuiPanelHeader--static vkuiInternalPanelHeader--static vkuiPanelHeader--sep vkuiInternalPanelHeader--sep vkuiPanelHeader--no-before vkuiInternalPanelHeader--no-before vkuiPanelHeader--no-after vkuiPanelHeader--fixed vkuiPanelHeader--sizeX-none vkuiPanelHeader--sizeY-none"
+>
+  <div
+    className="vkuiFixedLayout vkuiFixedLayout--vertical-top vkuiPanelHeader__fixed vkuiInternalPanelHeader__fixed"
+    data-onboarding-tooltip-container="fixed"
+    style={
+      {
+        "width": undefined,
+      }
+    }
+  >
+    <div
+      className="vkuiPanelHeader__in"
+      data-onboarding-tooltip-container="fixed"
+    >
+      <div
+        className="vkuiPanelHeader__before vkuiInternalPanelHeader__before"
+      />
+      <div
+        className="vkuiPanelHeader__content"
+      >
+        <span
+          className="vkuiPanelHeader__content-in"
+        >
+          Hello
+        </span>
+      </div>
+      <div
+        className="vkuiPanelHeader__after vkuiInternalPanelHeader__after"
+      />
+    </div>
+  </div>
+  <div
+    className="vkuiSeparator vkuiSeparator--padded vkui-sizeX--compact-mq"
+  >
+    <hr
+      className="vkuiSeparator__in"
+    />
+  </div>
+  <div
+    className="vkuiSpacing vkui-sizeX--regular-mq"
+    style={
+      {
+        "height": 16,
+        "padding": "8px 0",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Headers render Should Header renders is not Main\` 1`] = `
+<div
+  className="vkuiPanelHeader vkuiInternalPanelHeader vkuiPanelHeader--android vkuiPanelHeader--static vkuiInternalPanelHeader--static vkuiPanelHeader--sep vkuiInternalPanelHeader--sep vkuiPanelHeader--no-before vkuiInternalPanelHeader--no-before vkuiPanelHeader--no-after vkuiPanelHeader--fixed vkuiPanelHeader--sizeX-none vkuiPanelHeader--sizeY-none"
+>
+  <div
+    className="vkuiFixedLayout vkuiFixedLayout--vertical-top vkuiPanelHeader__fixed vkuiInternalPanelHeader__fixed"
+    data-onboarding-tooltip-container="fixed"
+    style={
+      {
+        "width": undefined,
+      }
+    }
+  >
+    <div
+      className="vkuiPanelHeader__in"
+      data-onboarding-tooltip-container="fixed"
+    >
+      <div
+        className="vkuiPanelHeader__before vkuiInternalPanelHeader__before"
+      />
+      <div
+        className="vkuiPanelHeader__content"
+      >
+        <span
+          className="vkuiPanelHeader__content-in"
+        >
+          Hello
+        </span>
+      </div>
+      <div
+        className="vkuiPanelHeader__after vkuiInternalPanelHeader__after"
+      />
+    </div>
+  </div>
+  <div
+    className="vkuiSeparator vkuiSeparator--padded vkui-sizeX--compact-mq"
+  >
+    <hr
+      className="vkuiSeparator__in"
+    />
+  </div>
+  <div
+    className="vkuiSpacing vkui-sizeX--regular-mq"
+    style={
+      {
+        "height": 16,
+        "padding": "8px 0",
+      }
+    }
+  />
+</div>
+`;
