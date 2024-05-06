@@ -23,24 +23,6 @@ const newsReducer = (state = initialState, action: IAction) => {
         newsItem: action.payload,
         isLoadedNews: true,
       };
-    case ActionType.FILL_COMMENTS:
-      return {
-        ...state,
-        newsComments: action.payload,
-        isLoadedComments: true,
-      };
-    case ActionType.FILL_SUB_COMMENTS:
-      return {
-        ...state,
-        newsSubComments: action.payload,
-        isLoadedSubComments: true,
-      };
-    case ActionType.RESET_STATUS:
-      return {
-        ...state,
-        isLoadedNews: false,
-        isLoadedComments: false,
-      };
     default:
       return state;
   }

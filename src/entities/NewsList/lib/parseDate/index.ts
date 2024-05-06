@@ -1,5 +1,5 @@
 export const parseDate = (time: number): string => {
-  const timestamp: number = time * 1000; // Преобразуем секунды в миллисекунды
+  const timestamp: number = time * 1000;
   const date: string = new Date(timestamp).toLocaleDateString("ru", {
     year: "numeric",
     month: "long",
